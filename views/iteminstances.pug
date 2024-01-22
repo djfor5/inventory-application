@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  h1 #{title}
+  if iteminstances.length
+    ul
+      each iteminstance in iteminstances
+        li
+          a(href=iteminstance.url) #{iteminstance._id}
+          p Item ID: #{iteminstance.itemId}
+  else
+    p There are no item instances.

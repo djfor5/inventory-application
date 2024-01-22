@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 #{title}
+  if items.length
+    ul
+      each item in items
+        li
+          a(href=item.url) #{item.name}
+          p Description: #{item.description}
+          p Category: #{item.category}
+          p Quantity in stock: #{item.quantity}
+  else
+    p There are no items.
